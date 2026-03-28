@@ -1,0 +1,17 @@
+*.log
+.DS_Store
+Thumbs.db
+
+backend/.env
+backend/vendor
+backend/node_modules
+backend/public/hot
+backend/public/storage
+backend/storage/*.key
+backend/storage/pail
+
+frontend/.env
+frontend/node_modules
+
+node_modules
+vendor
