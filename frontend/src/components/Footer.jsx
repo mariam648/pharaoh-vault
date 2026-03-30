@@ -61,22 +61,22 @@ function Footer() {
 
           <div className="mt-5 flex items-center gap-3">
             <a
-              href="#"
+              href=""
               className="rounded-full border border-[#ddd0b8] p-2 text-[#1e3a5f] hover:bg-[#f8f5ef] dark:border-[#35526b] dark:text-[#f8e7b0] dark:hover:bg-[#132033]">
               <FiFacebook />
             </a>
             <a
-              href="#"
+              href=""
               className="rounded-full border border-[#ddd0b8] p-2 text-[#1e3a5f] hover:bg-[#f8f5ef] dark:border-[#35526b] dark:text-[#f8e7b0] dark:hover:bg-[#132033]">
               <FiInstagram />
             </a>
             <a
-              href="#"
+              href=""
               className="rounded-full border border-[#ddd0b8] p-2 text-[#1e3a5f] hover:bg-[#f8f5ef] dark:border-[#35526b] dark:text-[#f8e7b0] dark:hover:bg-[#132033]">
               <FiTwitter />
             </a>
             <a
-              href="#"
+              href=""
               className="rounded-full border border-[#ddd0b8] p-2 text-[#1e3a5f] hover:bg-[#f8f5ef] dark:border-[#35526b] dark:text-[#f8e7b0] dark:hover:bg-[#132033]">
               <FiMail />
             </a>

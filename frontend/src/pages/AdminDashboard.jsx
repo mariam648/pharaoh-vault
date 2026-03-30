@@ -224,7 +224,7 @@ function AdminDashboard() {
 
                       <td className="px-4 py-3">
                         <img
-                          src={`http://127.0.0.1:8000/${product.image}`}
+                          src={`/${product.image}`}
                           alt={product.name_en}
                           className="h-14 w-14 rounded-xl bg-white object-contain"
                         />
