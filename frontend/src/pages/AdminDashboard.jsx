@@ -22,24 +22,13 @@ function AdminDashboard() {
   const getImageUrl = (imagePath) => {
     if (!imagePath) return "";
 
-    if (imagePath.startsWith("http://127.0.0.1:8000")) {
-      return imagePath.replace("http://127.0.0.1:8000", "");
-    }
-
-    if (imagePath.startsWith("http://localhost:8000")) {
-      return imagePath.replace("http://localhost:8000", "");
-    }
-
-    if (imagePath.startsWith("https://127.0.0.1:8000")) {
-      return imagePath.replace("https://127.0.0.1:8000", "");
-    }
-
-    if (imagePath.startsWith("https://localhost:8000")) {
-      return imagePath.replace("https://localhost:8000", "");
-    }
-
-    if (imagePath.startsWith("http://") || imagePath.startsWith("https://")) {
-      return imagePath;
+    try {
+      if (imagePath.startsWith("http://") || imagePath.startsWith("https://")) {
+        const url = new URL(imagePath);
+        return `${url.pathname}${url.search}${url.hash}`;
+      }
+    } catch (error) {
+      console.error("Invalid image URL:", imagePath);
     }
 
     return imagePath.startsWith("/") ? imagePath : `/${imagePath}`;
