@@ -18,6 +18,14 @@ function AdminDashboard() {
   const [search, setSearch] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showDetailsModal, setShowDetailsModal] = useState(false);
+  const getImageUrl = (imagePath) => {
+  if (!imagePath) return "";
+
+  return imagePath
+    .replace("http://127.0.0.1:8000/", "/")
+    .replace("http://localhost:8000/", "/")
+    .replace(/^\/+/, "/");
+};
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -224,10 +232,10 @@ function AdminDashboard() {
 
                       <td className="px-4 py-3">
                         <img
-                          src={`/${product.image}`}
-                          alt={product.name_en}
-                          className="h-14 w-14 rounded-xl bg-white object-contain"
-                        />
+  src={getImageUrl(product.image)}
+  alt={product.name_en}
+  className="h-16 w-16 rounded-lg object-cover"
+/>
                       </td>
 
                       <td className="px-4 py-3 font-semibold">
