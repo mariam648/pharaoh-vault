@@ -99,7 +99,7 @@ function AdminDashboard() {
               </p>
 
               <h1 className="mt-3 text-4xl font-extrabold text-white">
-                Admin Dashboard
+                Admin Dashboard V2 TEST
               </h1>
 
               <p className="mt-3 text-lg text-white/90">
