@@ -18,7 +18,32 @@ function AdminDashboard() {
   const [search, setSearch] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showDetailsModal, setShowDetailsModal] = useState(false);
- 
+
+  const getImageUrl = (imagePath) => {
+    if (!imagePath) return "";
+
+    if (imagePath.startsWith("http://127.0.0.1:8000")) {
+      return imagePath.replace("http://127.0.0.1:8000", "");
+    }
+
+    if (imagePath.startsWith("http://localhost:8000")) {
+      return imagePath.replace("http://localhost:8000", "");
+    }
+
+    if (imagePath.startsWith("https://127.0.0.1:8000")) {
+      return imagePath.replace("https://127.0.0.1:8000", "");
+    }
+
+    if (imagePath.startsWith("https://localhost:8000")) {
+      return imagePath.replace("https://localhost:8000", "");
+    }
+
+    if (imagePath.startsWith("http://") || imagePath.startsWith("https://")) {
+      return imagePath;
+    }
+
+    return imagePath.startsWith("/") ? imagePath : `/${imagePath}`;
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -225,10 +250,10 @@ function AdminDashboard() {
 
                       <td className="px-4 py-3">
                         <img
-                        src={`/${product.image}`}
-                        alt={language === "ar" ? product.name_ar : product.name_en}
-                        className="h-full w-full object-contain transition duration-500 group-hover:scale-105"
-                      />
+                          src={getImageUrl(product.image)}
+                          alt={product.name_en}
+                          className="h-16 w-16 rounded-lg bg-white object-contain"
+                        />
                       </td>
 
                       <td className="px-4 py-3 font-semibold">
@@ -293,7 +318,7 @@ function AdminDashboard() {
             <div className="mt-6 grid gap-6 md:grid-cols-2">
               <div className="rounded-2xl bg-[#f8f5ef] p-4 dark:bg-[#102038]">
                 <img
-                  src={`/${selectedProduct.image}`}
+                  src={getImageUrl(selectedProduct.image)}
                   alt={selectedProduct.name_en}
                   className="h-72 w-full rounded-2xl bg-white object-contain"
                 />
