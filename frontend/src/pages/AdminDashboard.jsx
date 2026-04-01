@@ -223,13 +223,20 @@ function AdminDashboard() {
                       <td className="px-4 py-3">{product.id}</td>
 
                       <td className="px-4 py-3">
-                        <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-lg bg-[#f7f1e7] dark:bg-[#102038]">
-                          <img
-                            src={`/${product.image}`}
-                            alt={product.name_en}
-                            className="h-full w-full object-contain"
-                          />
-                        </div>
+                        <img
+                          src={`/${product.image}`}
+                          alt={product.name_en}
+                          style={{
+                            width: "70px",
+                            height: "70px",
+                            objectFit: "contain",
+                            display: "block",
+                            backgroundColor: "#ffffff",
+                            borderRadius: "12px",
+                            padding: "6px",
+                            border: "1px solid #e5e7eb",
+                          }}
+                        />
                       </td>
 
                       <td className="px-4 py-3 font-semibold">
@@ -291,21 +298,14 @@ function AdminDashboard() {
               </button>
             </div>
 
-            
-    <img
-    src={`/${product.image}`}
-    alt={product.name_en}
-    style={{
-      width: "70px",
-      height: "70px",
-      objectFit: "contain",
-      display: "block",
-      backgroundColor: "#fff",
-      borderRadius: "12px",
-      padding: "6px",
-      border: "1px solid #e5e7eb",
-    }}
-  />
+            <div className="mt-6 grid gap-6 md:grid-cols-2">
+              <div className="rounded-2xl bg-[#f8f5ef] p-4 dark:bg-[#102038]">
+                <img
+                  src={`/${selectedProduct.image}`}
+                  alt={selectedProduct.name_en}
+                  className="h-72 w-full rounded-2xl bg-white object-contain"
+                />
+              </div>
 
               <div className="grid gap-3">
                 <div className="rounded-2xl bg-[#f8f5ef] p-4 dark:bg-[#102038]">
@@ -343,7 +343,8 @@ function AdminDashboard() {
                     {selectedProduct.rating}
                   </p>
                 </div>
-              
+              </div>
+            </div>
 
             <div className="mt-6 grid gap-4">
               <div className="rounded-2xl bg-[#f8f5ef] p-4 dark:bg-[#102038]">
