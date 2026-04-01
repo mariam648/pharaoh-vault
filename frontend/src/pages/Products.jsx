@@ -110,7 +110,7 @@ function Products() {
           </p>
           <div className="mb-6 flex justify-center">
   <div className="mb-6 flex justify-center gap-3">
-  {!isAdmin ? (
+  {/* {!isAdmin ? (
     <Link
       to="/admin/login"
       className="rounded-2xl bg-[#1e3a5f] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#16304f] dark:bg-[#35c6c6] dark:text-[#0f172a] dark:hover:bg-[#24b2b2]"
@@ -133,7 +133,7 @@ function Products() {
         Logout
       </button>
     </>
-  )}
+  )} */}
 </div>
 </div>
           <h1 className="text-4xl font-extrabold tracking-tight text-[#1e3a5f] dark:text-[#f8e7b0] sm:text-5xl">

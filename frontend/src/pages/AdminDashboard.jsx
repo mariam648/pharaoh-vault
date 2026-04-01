@@ -19,21 +19,6 @@ function AdminDashboard() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showDetailsModal, setShowDetailsModal] = useState(false);
 
-  const getImageUrl = (imagePath) => {
-    if (!imagePath) return "";
-
-    try {
-      if (imagePath.startsWith("http://") || imagePath.startsWith("https://")) {
-        const url = new URL(imagePath);
-        return `${url.pathname}${url.search}${url.hash}`;
-      }
-    } catch (error) {
-      console.error("Invalid image URL:", imagePath);
-    }
-
-    return imagePath.startsWith("/") ? imagePath : `/${imagePath}`;
-  };
-
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -99,7 +84,7 @@ function AdminDashboard() {
               </p>
 
               <h1 className="mt-3 text-4xl font-extrabold text-white">
-                Admin Dashboard V2 TEST
+                Admin Dashboard
               </h1>
 
               <p className="mt-3 text-lg text-white/90">
@@ -238,11 +223,13 @@ function AdminDashboard() {
                       <td className="px-4 py-3">{product.id}</td>
 
                       <td className="px-4 py-3">
-                        <img
-                          src={getImageUrl(product.image)}
-                          alt={product.name_en}
-                          className="h-16 w-16 rounded-lg bg-white object-contain"
-                        />
+                        <div className="flex h-16 w-16 items-center justify-center overflow-hidden rounded-lg bg-[#f7f1e7] dark:bg-[#102038]">
+                          <img
+                            src={`/${product.image}`}
+                            alt={product.name_en}
+                            className="h-full w-full object-contain"
+                          />
+                        </div>
                       </td>
 
                       <td className="px-4 py-3 font-semibold">
@@ -307,7 +294,7 @@ function AdminDashboard() {
             <div className="mt-6 grid gap-6 md:grid-cols-2">
               <div className="rounded-2xl bg-[#f8f5ef] p-4 dark:bg-[#102038]">
                 <img
-                  src={getImageUrl(selectedProduct.image)}
+                  src={`/${selectedProduct.image}`}
                   alt={selectedProduct.name_en}
                   className="h-72 w-full rounded-2xl bg-white object-contain"
                 />
@@ -420,5 +407,3 @@ function AdminDashboard() {
 }
 
 export default AdminDashboard;
-
-
