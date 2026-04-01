@@ -291,14 +291,21 @@ function AdminDashboard() {
               </button>
             </div>
 
-            <div className="mt-6 grid gap-6 md:grid-cols-2">
-               <div className="h-20 w-20 overflow-hidden rounded-xl border border-[#eadfcb] bg-white p-2 dark:border-[#35526b] dark:bg-[#102038]">
+            
     <img
-      src={`/${product.image}`}
-      alt={product.name_en}
-      className="h-full w-full object-contain"
-    />
-  </div>
+    src={`/${product.image}`}
+    alt={product.name_en}
+    style={{
+      width: "70px",
+      height: "70px",
+      objectFit: "contain",
+      display: "block",
+      backgroundColor: "#fff",
+      borderRadius: "12px",
+      padding: "6px",
+      border: "1px solid #e5e7eb",
+    }}
+  />
 
               <div className="grid gap-3">
                 <div className="rounded-2xl bg-[#f8f5ef] p-4 dark:bg-[#102038]">
@@ -336,8 +343,7 @@ function AdminDashboard() {
                     {selectedProduct.rating}
                   </p>
                 </div>
-              </div>
-            </div>
+              
 
             <div className="mt-6 grid gap-4">
               <div className="rounded-2xl bg-[#f8f5ef] p-4 dark:bg-[#102038]">
